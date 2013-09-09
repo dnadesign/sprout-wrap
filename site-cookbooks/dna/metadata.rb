@@ -1,0 +1,7 @@
+maintainer        'DNA Designed Communications Limited'
+maintainer_email  'dev@dna.co.nz'
+license           'MIT'
+description       'DNA Web Development Machine Configuration'
+long_description  'Sets up an OSX for doing web development at DNA'
+version           '0.1.0'
+supports          'mac_os_x'

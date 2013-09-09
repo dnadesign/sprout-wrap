@@ -1,8 +1,9 @@
 # sprout-wrap
 
-[![Build Status](https://travis-ci.org/pivotal-sprout/sprout-wrap.png?branch=master)](https://travis-ci.org/pivotal-sprout/sprout-wrap)
+Prepares a Mac running OS X Mountain Lion for web development at DNA using [soloist](https://github.com/mkocher/soloist) and [Sprout](https://github.com/pivotal-sprout/sprout).
 
-Prepares a Mac running OS X Mountain Lion for Ruby development using [soloist](https://github.com/mkocher/soloist) and [Sprout](https://github.com/pivotal-sprout/sprout)
+This DNA implementation differs as we not only do Ruby work but a mix of PHP,
+Node.js and a variety of other technologies.
 
 ## Installation
 
@@ -16,7 +17,7 @@ Prepares a Mac running OS X Mountain Lion for Ruby development using [soloist](h
   
 ### 3. Clone this project
   
-    git clone https://github.com/pivotal-sprout/sprout-wrap.git
+    git clone https://github.com/dnadesign/sprout-wrap.git
     cd sprout-wrap
   
 ### 4. Install soloist & and other required gems
@@ -27,3 +28,10 @@ Prepares a Mac running OS X Mountain Lion for Ruby development using [soloist](h
 ### 5. Run soloist
   
     bundle exec soloist
+
+## Configuration 
+
+Check the soloistc file for the packages in use and site-cookbooks/dna for a 
+complete list but at a high level this project adds the following installations
+(mostly through homebrew) but a lig
+
