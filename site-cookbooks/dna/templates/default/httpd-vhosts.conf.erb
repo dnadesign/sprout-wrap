@@ -1,0 +1,13 @@
+<VirtualHost *:80>
+    ServerName dev
+    ServerAlias *.dev
+    VirtualDocumentRoot "<%= node['sprout']['home'] %>/Sites/%1"
+    VirtualDocumentRoot "<%= node['sprout']['home'] %>/Sites/%-3+/"
+
+    <Directory "<%= node['sprout']['home'] %>/Sites/">
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Order allow,deny
+        Allow from all
+    </Directory>
+</Virtualhost>

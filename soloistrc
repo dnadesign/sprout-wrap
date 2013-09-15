@@ -2,4 +2,6 @@ recipes:
 - dna::osx_configuration
 - dna::osx_apps
 - dna::osx_development
+- dna::create_ssh_key
 - dna::osx_scripts
+- dna::silverstripe	

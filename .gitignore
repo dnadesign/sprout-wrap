@@ -1,2 +1,4 @@
 tmp/
 cookbooks/
+*.sublime-project
+*.sublime-workspace

@@ -33,5 +33,35 @@ Node.js and a variety of other technologies.
 
 Check the soloistc file for the packages in use and site-cookbooks/dna for a 
 complete list but at a high level this project adds the following installations
-(mostly through homebrew) but a lig
+(mostly through homebrew) 
+	
+	- PHP 5.4 (with our usual extensions)
+	- Apache 2.4
+	- MySQL, PostgreSQL, Redis, Mongo (incl backend GUIs for those)
+	- Node, NPM, Grunt development tools
+	- Unit / Behaviour testing frameworks (PHPUnit, XDebug..)
+	- Ruby, Jekyll core
+	- Capistrano for deployments
+	- Tested with Wordpress, SilverStripe, Capistrano, Jekyll
+	- Dev applications (Colloquy, Tower, FTP, SublimeText2)
+	- Bash improvements (dotfiles)
+	- Misc configuration for consistency
+
+This also sets the machine up to use wildcard domains. Projects in ~/Sites are 
+automatically accessible at site.dev
+
+For more details consult the Welcome To DNA PDF containing the introduction to 
+your machine.
+
+## Getting updates
+
+To keep your machine consistent with any packages that we need for clients or 
+other work, update this project through git pull and run `bundle exec soloist`
+again. You may want to restart your terminal window in that event as the 
+updates will muck with your bash session.
+
+If you know a specific recipe has been updated and you just need to run soloist
+with the recipe as the argument
+
+	bundle exec soloist run_recipe dna:dotfiles
 
