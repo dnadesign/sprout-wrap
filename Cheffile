@@ -10,8 +10,7 @@ cookbook 'dna-osx-apps',
   :path => 'site-cookbooks/dna-osx-apps'
   
 cookbook 'sprout-osx-base',
-  :git => 'git://github.com/pivotal-sprout/sprout.git',
-  :path => 'sprout-osx-base'
+  :path => 'site-cookbooks/sprout-osx-base'
 
 cookbook 'pivotal_workstation',
   :git => 'git://github.com/pivotal-sprout/sprout.git',
