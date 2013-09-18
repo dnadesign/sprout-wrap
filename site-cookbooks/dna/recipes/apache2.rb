@@ -11,6 +11,10 @@ template "#{node['sprout']['home']}/Sites/tools/setdocroot.php" do
   owner node['current_user']
 end
 
+execute "fix permissions on docroot" do
+  command "chmod -R 755 #{node['sprout']['home']}/Sites/tools/setdocroot.php"
+end
+
 brew "djl/apache2/apache22"
 
 template "/usr/local/Cellar/apache22/2.2.25/conf/httpd.conf" do
