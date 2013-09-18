@@ -7,8 +7,8 @@ execute "tap the djl repo" do
 end
 
 template "#{node['sprout']['home']}/Sites/tools/setdocroot.php" do
-	source "setdocroot.php"
-	owner node['current_user']
+  source "setdocroot.php"
+  owner node['current_user']
 end
 
 brew "djl/apache2/apache22"
@@ -16,4 +16,15 @@ brew "djl/apache2/apache22"
 template "/usr/local/Cellar/apache22/2.2.25/conf/httpd.conf" do
   source "httpd.conf.erb"
   owner node['current_user']
+end
+
+template "#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.apachectl.plist" do
+  source "homebrew.mxcl.apachectl.plist"
+  owner node['current_user']
+end
+
+execute "load apachectl via launchctl" do
+  command "launchctl load -w #{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.apachectl.plist"
+  owner node['current_user']
+  not_if "launchctl list | grep apache"
 end
