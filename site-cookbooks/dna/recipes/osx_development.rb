@@ -28,6 +28,7 @@ include_recipe "pivotal_workstation::mysql"
 include_recipe "pivotal_workstation::postgres"
 include_recipe "pivotal_workstation::qt"
 include_recipe "dna::cleanup"
+include_recipe "dna::phpsmtp"
 include_recipe "pivotal_workstation::php54"
 include_recipe "dna::dnsmasq" # *.dev wildcard
 include_recipe "dna::gruntjs"
