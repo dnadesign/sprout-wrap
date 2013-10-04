@@ -29,6 +29,5 @@ end
 
 execute "load apachectl via launchctl" do
   command "launchctl load -w #{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.apachectl.plist"
-  owner node['current_user']
   not_if "launchctl list | grep apache"
 end
