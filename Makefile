@@ -1,6 +1,9 @@
-# installs the full set
+all:
+	@echo "Available commands:"
+	@grep "^[^#[:space:]].*:$$" Makefile | sort
+
 install:
-	# to run a single recipe use
-	# bundle exec soloist run_recipe dna::recipe
 	bundle exec soloist
 
+install_recipe:
+	bundle exec soloist run_recipe $(recipe)	
