@@ -20,6 +20,8 @@ execute "link PHPunit" do
 end
 
 brew "php54-mongo"
+brew "php54-mcrypt"
+brew "php54-tidy"
 
 execute "Install composer" do
 	command "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer"
