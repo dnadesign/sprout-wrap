@@ -3,11 +3,12 @@ include_recipe "dna::folders"
 #
 # Download dotfiles
 #
-git "Download wilr/dotfiles" do
-  repository "http://github.com/wilr/dotfiles.git"
+git "Download dnadesign/dotfiles" do
+  repository "http://github.com/dnadesign/dotfiles.git"
   destination "#{node['sprout']['home']}/Scripts/dotfiles"
   action :sync
   user node['current_user']
+  not_if { ::File.exists?("#{node['sprout']['home']}/Scripts/dotfiles") }
 end
 
 #
