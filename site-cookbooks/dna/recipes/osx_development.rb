@@ -37,6 +37,7 @@ include_recipe "dna::dnsmasq" # *.dev wildcard
 include_recipe "dna::gruntjs"
 include_recipe "dna::rockmongo"
 include_recipe "dna-osx-apps::cyberduck"
+include_recipe "dna::graphviz"
 include_recipe "dna-osx-apps::vmwarefusion"
 include_recipe "dna::huxley"
 include_recipe "dna::capistrano"
