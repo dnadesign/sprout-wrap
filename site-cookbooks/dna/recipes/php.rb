@@ -22,6 +22,12 @@ end
 brew "php54-mongo"
 brew "php54-mcrypt"
 brew "php54-tidy"
+brew "php54-xhprof"
+
+execute "Create symlink to xhprof" do
+	command "ln -s /usr/local/opt/php54-xhprof/xhprof_html/ #{node['sprout']['home']}/Sites/xhprof"
+	not_if { ::File.exists?("#{node['sprout']['home']}/Sites/xhprof") }
+end
 
 execute "Install composer" do
 	command "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer"

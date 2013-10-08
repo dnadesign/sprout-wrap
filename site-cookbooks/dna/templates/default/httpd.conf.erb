@@ -480,10 +480,10 @@ AddHandler php5-script .php
 AddType text/html .php
 
 # Use localhost as a root
-<VirtualHost *:80>
-    ServerName localhost
-    DocumentRoot "<%= node['sprout']['home'] %>/Sites/"
-</VirtualHost>
+# <VirtualHost *:80>
+#    ServerName localhost
+#    DocumentRoot "<%= node['sprout']['home'] %>/Sites/"
+# </VirtualHost>
 
 # Use a virtual document root. See the default document root configuration
 # for security settings.
@@ -492,5 +492,6 @@ AddType text/html .php
     ServerAlias *.dev
     VirtualDocumentRoot "<%= node['sprout']['home'] %>/Sites/%1"
 
-    php_admin_value auto_prepend_file <%= node['sprout']['home'] %>/Sites/tools/setdocroot.php
+    php_admin_value auto_prepend_file <%= node['sprout']['home'] %>/Sites/tools/php.prepend.php
+    php_admin_value auto_append_file <%= node['sprout']['home'] %>/Sites/tools/php.append.php
 </Virtualhost>

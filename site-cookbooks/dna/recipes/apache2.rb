@@ -11,6 +11,18 @@ template "#{node['sprout']['home']}/Sites/tools/setdocroot.php" do
   owner node['current_user']
 end
 
+template "#{node['sprout']['home']}/Sites/tools/php.prepend.php" do
+  source "php.prepend.php"
+  owner node['current_user']
+  mode "0755"
+end
+
+template "#{node['sprout']['home']}/Sites/tools/php.append.php" do
+  source "php.append.php"
+  owner node['current_user']
+  mode "0755"
+end
+
 execute "fix permissions on docroot" do
   command "chmod -R 755 #{node['sprout']['home']}/Sites/tools/setdocroot.php"
 end
