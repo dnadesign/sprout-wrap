@@ -1,3 +1,3 @@
 execute "Install compass" do
-	command "gem install compass"
+	command "gem install compass compass-colors"
 end
