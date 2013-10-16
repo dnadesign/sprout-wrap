@@ -41,3 +41,4 @@ include_recipe "dna::graphviz"
 include_recipe "dna-osx-apps::vmwarefusion"
 include_recipe "dna::huxley"
 include_recipe "dna::capistrano"
+include_recipe "dna::spidermonkey" # used by DNA Chef
