@@ -23,6 +23,7 @@ brew "php54-mongo"
 brew "php54-mcrypt"
 brew "php54-tidy"
 brew "php54-xhprof"
+brew "php54-ssh2"
 
 execute "Create symlink to xhprof" do
 	command "ln -s /usr/local/opt/php54-xhprof/xhprof_html/ #{node['sprout']['home']}/Sites/xhprof"
