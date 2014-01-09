@@ -17,6 +17,7 @@ end
 git "Download lvv/git-prompt" do
   repository "http://github.com/lvv/git-prompt.git"
   destination "#{node['sprout']['home']}/Scripts/git-prompt"
+  reference "eeff805e0bcdab5317ed1027bef2b625a8f7f94b"
   action :sync
 end
 
