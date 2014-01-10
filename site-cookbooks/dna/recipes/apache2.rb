@@ -29,7 +29,7 @@ end
 
 brew "djl/apache2/apache22"
 
-template "/usr/local/Cellar/apache22/2.2.25/conf/httpd.conf" do
+template "/usr/local/Cellar/apache22/2.2.26/conf/httpd.conf" do
   source "httpd.conf.erb"
   owner node['current_user']
 end
