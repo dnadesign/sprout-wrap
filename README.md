@@ -29,6 +29,13 @@ Node.js and a variety of other technologies.
   
     bundle exec soloist
 
+## Troubleshooting
+
+	`gem_original_require': no such file to load -- rubygems/format 
+	
+Use `sudo gem update --system 1.8.25` to downgrade RubyGems. http://lists.opscode.com/sympa/arc/chef/2013-02/msg00577.html
+
+
 ## Configuration 
 
 Check the soloistc file for the packages in use and site-cookbooks/dna for a 
