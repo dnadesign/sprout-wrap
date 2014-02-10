@@ -29,18 +29,12 @@ end
 
 brew "djl/apache2/apache22"
 
-template "/usr/local/Cellar/apache22/2.2.26/conf/httpd.conf" do
+template "/usr/local/etc/apache2/httpd.conf" do
   source "httpd.conf.erb"
   owner node['current_user']
 end
 
-template "#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.apachectl.plist" do
+template "/Library/LaunchDaemons/homebrew.mxcl.apachectl.plist" do
   source "homebrew.mxcl.apachectl.plist"
-  owner node['current_user']
-end
-
-execute "load apachectl via launchctl" do
-  command "launchctl load -w #{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.apachectl.plist"
-  user node['current_user']
-  not_if "launchctl list | grep apache"
+  owner 'root'
 end
