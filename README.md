@@ -35,6 +35,10 @@ Node.js and a variety of other technologies.
 	
 Use `sudo gem update --system 1.8.25` to downgrade RubyGems. http://lists.opscode.com/sympa/arc/chef/2013-02/msg00577.html
 
+	`Chef Client is running hangs`
+
+Remove the pid file from `/var/chef/cache/chef-client-running.pid`.
+
 
 ## Configuration 
 
