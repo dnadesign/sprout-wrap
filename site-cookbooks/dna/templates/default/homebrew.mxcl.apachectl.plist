@@ -4,19 +4,13 @@
   <dict>
     <key>Label</key>
     <string>homebrew.mxcl.apachectl</string>
-    <key>RunAtLoad</key>
-    <true/>
     <key>KeepAlive</key>
     <true/>
-    <key>UserName</key>
-    <string>root</string>
     <key>ProgramArguments</key>
     <array>
         <string>/usr/local/bin/apachectl</string>
         <string>-k</string>
         <string>start</string>
     </array>
-    <key>WorkingDirectory</key>
-    <string>/usr/local</string>
   </dict>
 </plist>
