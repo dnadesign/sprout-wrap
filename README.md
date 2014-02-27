@@ -13,7 +13,7 @@ Node.js and a variety of other technologies.
 
 ### 2. Install Command Line Tools
   
-  XCode > Preferences > Downloads
+	xcode-select --install
   
 ### 3. Clone this project
   
