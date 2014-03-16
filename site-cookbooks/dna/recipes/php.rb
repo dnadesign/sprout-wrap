@@ -31,6 +31,6 @@ execute "Create symlink to xhprof" do
 end
 
 execute "Install composer" do
-	command "curl -sS https://getcomposer.org/installer | php && mv composer.phar /usr/local/bin/composer"
+	command "curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer"
 	not_if { File.exists?("/usr/local/bin/composer") }
 end
