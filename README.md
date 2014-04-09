@@ -23,7 +23,7 @@ Node.js and a variety of other technologies.
 ### 4. Install soloist & and other required gems
 
     sudo gem install bundler
-    bundle
+    sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle install
 
 ### 5. Run soloist
   
