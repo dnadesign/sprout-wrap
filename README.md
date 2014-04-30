@@ -15,6 +15,12 @@ Node.js and a variety of other technologies.
   
 	xcode-select --install
   
+Accept the license terms (requested upon first command called provided by tools - e.g. git)
+
+	sudo git --help
+	q
+	agree
+  
 ### 3. Clone this project
   
     mkdir -p ~/Scripts
