@@ -17,8 +17,9 @@ Node.js and a variety of other technologies.
   
 ### 3. Clone this project
   
-    git clone https://github.com/dnadesign/sprout-wrap.git
-    cd sprout-wrap
+    mkdir -p ~/Scripts
+    git clone https://github.com/dnadesign/sprout-wrap.git ~/Scripts/dna_sprout
+    cd ~/Scripts/dna_sprout
   
 ### 4. Install soloist & and other required gems
 
