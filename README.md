@@ -15,15 +15,22 @@ Node.js and a variety of other technologies.
   
 	xcode-select --install
   
+Accept the license terms (requested upon first command called provided by tools - e.g. git)
+
+	sudo git --help
+	q
+	agree
+  
 ### 3. Clone this project
   
-    git clone https://github.com/dnadesign/sprout-wrap.git
-    cd sprout-wrap
+    mkdir -p ~/Scripts
+    git clone https://github.com/dnadesign/sprout-wrap.git ~/Scripts/dna_sprout
+    cd ~/Scripts/dna_sprout
   
 ### 4. Install soloist & and other required gems
 
     sudo gem install bundler
-    bundle
+    sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle install
 
 ### 5. Run soloist
   
