@@ -1,7 +1,14 @@
 SITE
-  remote: http://community.opscode.com/api/v1
+  remote: https://supermarket.getchef.com/api/v1
   specs:
     dmg (2.0.0)
+
+GIT
+  remote: git://github.com/pivotal-sprout/sprout-base.git
+  ref: master
+  sha: a2b7bd48ea5c11f9118086f2abda28f3c291e6cb
+  specs:
+    sprout-base (0.1.0)
 
 GIT
   remote: git://github.com/pivotal-sprout/sprout.git
@@ -85,6 +92,7 @@ DEPENDENCIES
   meta (>= 0)
   osx (>= 0)
   pivotal_workstation (>= 0)
+  sprout-base (>= 0)
   sprout-osx-apps (>= 0)
   sprout-osx-base (>= 0)
   sprout-osx-settings (>= 0)
