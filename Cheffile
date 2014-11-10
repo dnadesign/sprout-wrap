@@ -5,13 +5,16 @@ cookbook 'meta',
 
 cookbook 'dna',
   :path => 'site-cookbooks/dna'
-  
+
+cookbook 'dna-dotfiles',
+  :path => 'site-cookbooks/dna-dotfiles'
+
 cookbook 'dna-osx-apps',
   :path => 'site-cookbooks/dna-osx-apps'
 
 cookbook 'sprout-base',
   :git => 'git://github.com/pivotal-sprout/sprout-base.git'
-  
+
 cookbook 'sprout-osx-base',
   :path => 'site-cookbooks/sprout-osx-base'
 

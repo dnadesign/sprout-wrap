@@ -69,6 +69,11 @@ PATH
     dna (0.1.0)
 
 PATH
+  remote: site-cookbooks/dna-dotfiles
+  specs:
+    dna-dotfiles (0.1.0)
+
+PATH
   remote: site-cookbooks/dna-osx-apps
   specs:
     dna-osx-apps (0.1.0)
@@ -88,6 +93,7 @@ PATH
 
 DEPENDENCIES
   dna (>= 0)
+  dna-dotfiles (>= 0)
   dna-osx-apps (>= 0)
   meta (>= 0)
   osx (>= 0)
