@@ -16,6 +16,11 @@
   # Undo a `git push`
   undopush = push -f origin HEAD^:master
   # fancy log
+  st = status
+  ci = commit
+  co = checkout
+  prune = remote update origin --prune
+  standup = shortlog --since=yesterday
   <%= %(lg = "log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit") %>
 
 [apply]
