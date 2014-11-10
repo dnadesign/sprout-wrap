@@ -1,4 +1,4 @@
-include_recipe "dna::dotfiles"
+include_recipe "dotfiles"
 include_recipe "dna::sublime_text_3"
 include_recipe "pivotal_workstation::git_config_global_defaults"
 include_recipe "pivotal_workstation::github_for_mac"

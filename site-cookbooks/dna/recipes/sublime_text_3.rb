@@ -17,16 +17,9 @@ recursive_directories sublime_user_path do
   owner node['current_user']
 end
 
-# The rest of the sublime configuration is keep in dotfiles
-include_recipe "dna::dotfiles"
-
 # Fix permission
 recursive_directories(["#{node['sprout']['home']}/Library/Application Support", "Sublime Text 3", "Installed Packages"]) do
   owner node['current_user']
 end
 
-# Link the sublime configuration
-# execute "Install dotfiles sublime configuration" do
-#  command "#{node['sprout']['home']}/Scripts/dotfiles/bootstrap.sh subl -f"
-#  user node['current_user']
-# end
+# TODO: automate a shared list of sublime plugins somehow
