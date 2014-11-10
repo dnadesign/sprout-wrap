@@ -42,6 +42,29 @@ Accept the license terms (requested upon first command called provided by tools 
 
 Remove the pid file from `/var/chef/cache/chef-client-running.pid`.
 
+For issues with installing homebrew libraries:
+
+	brew update
+	brew doctor
+	# move or delete any "Unexpected dylibs" shown
+	# Update xcode command line tools (e.g. git and compilers etc)
+	xcode-select --install
+
+For further debugging the package being installed via homebrew look at the output of running these commands manually:
+
+	brew info PACKAGE
+	brew install PACKAGE
+
+Postgresql installation issues:
+
+	brew uninstall postgresql
+	brew install postgresql
+	# To re-initialize the postgresql db (deletes all data)
+	rm -rf /usr/local/var/postgres
+	initdb -D /usr/local/var/postgres -E utf8
+	createuser $(whoami)
+	createdb $(whoami)
+	createuser postgres
 
 ## Configuration
 
