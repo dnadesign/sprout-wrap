@@ -27,7 +27,7 @@ include_recipe "sprout-osx-apps::node_js"
 # include_recipe "pivotal_workstation::rvm"
 include_recipe "pivotal_workstation::gem_setup"
 include_recipe "dna::mysql"
-include_recipe "pivotal_workstation::postgres"
+# include_recipe "pivotal_workstation::postgres"
 # include_recipe "pivotal_workstation::qt"
 include_recipe "dna::cleanup"
 include_recipe "dna::autoconf" # fixes issue with compiling PHP extensions

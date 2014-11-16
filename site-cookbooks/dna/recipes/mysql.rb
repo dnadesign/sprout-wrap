@@ -1,4 +1,9 @@
-#http://solutions.treypiepmeier.com/2010/02/28/installing-mysql-on-snow-leopard-using-homebrew/
+# 2013-07-09 Install 5.6.10 because 5.6.12 doesn't work with mysql2 gem
+# https://github.com/pivotal-sprout/sprout-wrap/issues/11
+
+include_recipe "sprout-osx-base::homebrew"
+brew "mysql"
+
 require 'pathname'
 
 PASSWORD = node["mysql_root_password"]
@@ -6,7 +11,6 @@ PASSWORD = node["mysql_root_password"]
 DATA_DIR = "/usr/local/var/mysql"
 PARENT_DATA_DIR = "/usr/local/var"
 
-include_recipe "sprout-osx-base::homebrew"
 
 [ "/Users/#{node['current_user']}/Library/LaunchAgents",
   PARENT_DATA_DIR,
@@ -17,9 +21,6 @@ include_recipe "sprout-osx-base::homebrew"
   end
 end
 
-# 2013-07-09 Install 5.6.10 because 5.6.12 doesn't work with mysql2 gem
-# https://github.com/pivotal-sprout/sprout-wrap/issues/11
-brew "mysql"
 
 ruby_block "copy mysql plist to ~/Library/LaunchAgents" do
   block do
@@ -40,7 +41,7 @@ ruby_block "mysql_install_db" do
   not_if { File.exists?("/usr/local/var/mysql/mysql/user.MYD")}
 end
 
-execute "load the mysql plist into the mac daemon startup thing" do
+execute "load the mysql plist into the mac daemon startup" do
   command "launchctl load -w #{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
   user node['current_user']
   not_if { system("launchctl list com.mysql.mysqld") }

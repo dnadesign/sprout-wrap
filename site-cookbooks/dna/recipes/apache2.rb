@@ -1,9 +1,9 @@
 include_recipe "sprout-osx-base::homebrew"
 include_recipe "dna::folders"
 
-execute "tap the djl repo" do
-    command "brew tap djl/homebrew-apache2"
-    not_if { system("brew tap | grep 'djl' > /dev/null 2>&1") }
+execute "tap the homebrew/apache repo" do
+    command "brew tap homebrew/apache"
+    not_if { system("brew tap | grep 'apache' > /dev/null 2>&1") }
 end
 
 template "#{node['sprout']['home']}/Sites/tools/setdocroot.php" do
@@ -27,14 +27,13 @@ execute "fix permissions on docroot" do
   command "chmod -R 755 #{node['sprout']['home']}/Sites/tools/setdocroot.php"
 end
 
-brew "djl/apache2/apache22"
+brew "homebrew/apache/httpd24"
 
-template "/usr/local/etc/apache2/httpd.conf" do
+template "/usr/local/etc/apache2/2.4/httpd.conf" do
   source "httpd.conf.erb"
   owner node['current_user']
 end
 
-template "/Library/LaunchDaemons/homebrew.mxcl.apachectl.plist" do
-  source "homebrew.mxcl.apachectl.plist"
-  owner 'root'
+execute "Load HTTPD at boot" do
+  command "ln -sfv /usr/local/opt/httpd24/*.plist ~/Library/LaunchAgents"
 end
