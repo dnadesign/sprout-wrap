@@ -13,5 +13,9 @@ define('SS_DEFAULT_ADMIN_PASSWORD', 'password');
 
 global $_FILE_TO_URL_MAPPING;
 $_FILE_TO_URL_MAPPING['<%= @node["sprout"]["home"] %>/Sites'] = "http://localhost/";
-
-define('SOLR_PATH', '/data/solr');
+      
+define('SS_SEND_ALL_EMAILS_TO', '<%= @node["sprout"]["username"] %>@dna.co.nz');
+ 
+define('SS_PGSQL_DATABASE_SERVER', 'localhost');
+define('SS_PGSQL_DATABASE_USERNAME', 'postgres');
+define('SS_PGSQL_DATABASE_PASSWORD', '');

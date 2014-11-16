@@ -100,5 +100,11 @@ updates will muck with your bash session.
 If you know a specific recipe has been updated and you just need to run soloist
 with the recipe as the argument
 
-	bundle exec soloist run_recipe dna:dotfiles
+	bundle exec soloist run_recipe dna::dotfiles
 
+## Cleanup 
+
+Make sure you have a clean platform to run the updates from. Run the following
+
+	brew upgrade
+	brew cleanup

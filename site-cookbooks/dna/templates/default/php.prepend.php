@@ -13,8 +13,8 @@ require_once(dirname(__FILE__) . '/setdocroot.php');
 
 // include XHProf helper
 if (extension_loaded('xhprof')) {
-	include_once '/usr/local/opt/php54-xhprof/xhprof_lib/utils/xhprof_lib.php';
-	include_once '/usr/local/opt/php54-xhprof/xhprof_lib/utils/xhprof_runs.php';
+	include_once '/usr/local/opt/php56-xhprof/xhprof_lib/utils/xhprof_lib.php';
+	include_once '/usr/local/opt/php56-xhprof/xhprof_lib/utils/xhprof_runs.php';
 	
 	if(isset($_REQUEST['_profile'])) {
 		xhprof_enable(XHPROF_FLAGS_CPU + XHPROF_FLAGS_MEMORY);
