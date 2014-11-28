@@ -35,5 +35,5 @@ template "/usr/local/etc/apache2/2.4/httpd.conf" do
 end
 
 execute "Load HTTPD at boot" do
-  command "ln -sfv /usr/local/opt/httpd24/*.plist ~/Library/LaunchAgents"
+  command "ln -sfv /usr/local/opt/httpd24/*.plist ~/Library/LaunchAgents/"
 end

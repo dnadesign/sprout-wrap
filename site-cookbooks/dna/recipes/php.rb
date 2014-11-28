@@ -29,7 +29,7 @@ execute "link PHPunit" do
 end
 
 execute "Start PHP" do
-	command "ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents"
+	command "ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents/"
 end
 
 brew "php56-mongo"
