@@ -1,3 +1,8 @@
+directory "/Users/#{node['current_user']}/Library/LaunchAgents" do
+  owner node['current_user']
+  action :create
+end
+
 include_recipe "dna-dotfiles"
 include_recipe "dna::sublime_text_3"
 include_recipe "pivotal_workstation::git_config_global_defaults"
