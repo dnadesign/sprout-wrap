@@ -38,7 +38,7 @@ execute "Load HTTPD at boot" do
   command "cp -fv /usr/local/opt/httpd24/homebrew.mxcl.httpd24.plist /Library/LaunchDaemons/ &&
            chown -v root:wheel /Library/LaunchDaemons/homebrew.mxcl.httpd24.plist &&
            sudo chmod -v 644 /Library/LaunchDaemons/homebrew.mxcl.httpd24.plist"
-  nof_if { ::File.exists?("/Library/LaunchDaemons/homebrew.mxcl.httpd24.plist") }
+  not_if { ::File.exists?("/Library/LaunchDaemons/homebrew.mxcl.httpd24.plist") }
 end
 
 # execute "stop stock system apache" do
