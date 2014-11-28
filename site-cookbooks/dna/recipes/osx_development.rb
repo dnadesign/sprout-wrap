@@ -40,7 +40,7 @@ include_recipe "dna::phpsmtp"
 include_recipe "dna::php"
 include_recipe "dna::dnsmasq" # *.dev wildcard
 include_recipe "dna::gruntjs"
-include_recipe "dna::rockmongo"
+# include_recipe "dna::rockmongo"
 #include_recipe "dna-osx-apps::cyberduck" #now in mac app store
 include_recipe "dna::graphviz"
 #include_recipe "dna-osx-apps::vmwarefusion"
