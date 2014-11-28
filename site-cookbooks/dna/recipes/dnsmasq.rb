@@ -1,11 +1,13 @@
-# 
+#
 # Based on the following blog article
 # http://www.echoditto.com/blog/never-touch-your-local-etchosts-file-os-x-again
 #
 brew "dnsmasq"
 
 execute "copy dnsmasq for launchd" do
-  command "cp -fv /usr/local/opt/dnsmasq/*.plist /Library/LaunchDaemons"
+  command "cp -fv /usr/local/opt/dnsmasq/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons/ &&
+           chown -v root:wheel /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist &&
+           sudo chmod -v 644 /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist"
   not_if { ::File.exists?("/Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist") }
 end
 
