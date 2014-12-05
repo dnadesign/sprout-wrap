@@ -3,6 +3,7 @@ directory "/Users/#{node['current_user']}/Library/LaunchAgents" do
   action :create
 end
 
+include_recipe "dna::osx_open_files"
 include_recipe "dna-dotfiles"
 include_recipe "dna::sublime_text_3"
 include_recipe "pivotal_workstation::git_config_global_defaults"
