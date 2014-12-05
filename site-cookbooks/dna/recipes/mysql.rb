@@ -29,6 +29,7 @@ ruby_block "copy mysql plist to ~/Library/LaunchAgents" do
     destination = "#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
     system("cp #{plist_location} #{destination} && chown #{node['current_user']} #{destination}") || raise("Couldn't find the plist")
   end
+  not_if { ::File.exists?("#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist") }
 end
 
 ruby_block "mysql_install_db" do
