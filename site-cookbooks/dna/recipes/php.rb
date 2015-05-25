@@ -1,3 +1,11 @@
+execute "tap PHP homebrew versions" do
+	command "brew tap homebrew/versions"
+end
+
+execute "tap PHP" do
+	command "brew tap homebrew/homebrew-php"
+end
+
 brew "php56", {:brew_args => "--with-mysql --with-pgsql"}
 
 brew "php56-xdebug"
@@ -18,14 +26,6 @@ execute "setup pear" do
 		&& pear config-set auto_discover 1 \
 		&& pear update-channels \
 		&& pear upgrade"
-end
-
-execute "install PHPUnit" do
-	command "pear install pear.phpunit.de/PHPUnit PHP_CodeSniffer"
-end
-
-execute "link PHPunit" do
-	command "ln -s -f `brew --prefix php56`/bin/phpunit /usr/local/bin/phpunit"
 end
 
 execute "Start PHP" do
