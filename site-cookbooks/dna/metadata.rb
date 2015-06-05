@@ -1,3 +1,4 @@
+name              'dna'
 maintainer        'DNA Designed Communications Limited'
 maintainer_email  'dev@dna.co.nz'
 license           'MIT'
