@@ -18,7 +18,7 @@ directory Chef::Config[:file_cache_path] do
 end
 
 git "#{Chef::Config[:file_cache_path]}/homebrew" do
-  repository "https://github.com/mxcl/homebrew.git"
+  repository "https://github.com/Homebrew/homebrew.git"
   revision node["homebrew"]["version"]
   destination "#{Chef::Config[:file_cache_path]}/homebrew"
   action :sync
