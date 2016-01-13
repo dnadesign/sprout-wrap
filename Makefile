@@ -4,7 +4,7 @@ all:
 
 install:
 	sudo gem install bundler
-    sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle
+	sudo ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future bundle
 	caffeinate bundle exec soloist
 
 install_recipe:
