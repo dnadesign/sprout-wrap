@@ -11,8 +11,8 @@ recipes:
 - sprout-osx-apps::shiftit
 
 # settings
-- sprout-osx-settings
-- sprout-osx-settings::dock_preferences
+# - sprout-osx-settings
+# - sprout-osx-settings::dock_preferences
 - sprout-terminal
 - sprout-ssh::known_hosts_github
 
