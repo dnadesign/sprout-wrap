@@ -1,22 +1,22 @@
 # 2013-07-09 Install 5.6.10 because 5.6.12 doesn't work with mysql2 gem
 # https://github.com/pivotal-sprout/sprout-wrap/issues/11
 
-include_recipe "sprout-osx-base::homebrew"
-brew "mysql"
+package "mysql"
 
 require 'pathname'
 
 PASSWORD = node["mysql_root_password"]
+
 # The next two directories will be owned by node['current_user']
 DATA_DIR = "/usr/local/var/mysql"
 PARENT_DATA_DIR = "/usr/local/var"
 
 
-[ "/Users/#{node['current_user']}/Library/LaunchAgents",
+[ "#{node['sprout']['home']}/Library/LaunchAgents",
   PARENT_DATA_DIR,
   DATA_DIR ].each do |dir|
   directory dir do
-    owner node['current_user']
+    owner node['sprout']['user']
     action :create
   end
 end
@@ -27,7 +27,7 @@ ruby_block "copy mysql plist to ~/Library/LaunchAgents" do
     active_mysql = Pathname.new("/usr/local/bin/mysql").realpath
     plist_location = (active_mysql + "../../"+"homebrew.mxcl.mysql.plist").to_s
     destination = "#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-    system("cp #{plist_location} #{destination} && chown #{node['current_user']} #{destination}") || raise("Couldn't find the plist")
+    system("cp #{plist_location} #{destination} && chown #{node['sprout']['user']} #{destination}") || raise("Couldn't find the plist")
   end
   not_if { ::File.exists?("#{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist") }
 end
@@ -37,14 +37,14 @@ ruby_block "mysql_install_db" do
     active_mysql = Pathname.new("/usr/local/bin/mysql").realpath
     basedir = (active_mysql + "../../").to_s
     data_dir = "/usr/local/var/mysql"
-    system("mysql_install_db --verbose --user=#{node['current_user']} --basedir=#{basedir} --datadir=#{DATA_DIR} --tmpdir=/tmp && chown #{node['current_user']} #{data_dir}") || raise("Failed initializing mysqldb")
+    system("mysql_install_db --verbose --user=#{node['sprout']['user']} --basedir=#{basedir} --datadir=#{DATA_DIR} --tmpdir=/tmp && chown #{node['current_user']} #{data_dir}") || raise("Failed initializing mysqldb")
   end
   not_if { File.exists?("/usr/local/var/mysql/mysql/user.MYD")}
 end
 
 execute "load the mysql plist into the mac daemon startup" do
   command "launchctl load -w #{node['sprout']['home']}/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
-  user node['current_user']
+  user node['sprout']['user']
   not_if { system("launchctl list com.mysql.mysqld") }
 end
 

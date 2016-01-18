@@ -1,0 +1,18 @@
+include_recipe "dna::folders"
+
+include_recipe "dna::apache2"
+include_recipe "dna::autoconf"
+include_recipe "dna::capistrano"
+include_recipe "dna::compass"
+include_recipe "dna::create_ssh_key"
+include_recipe "dna::dnsmasq"
+include_recipe "dna::graphviz"
+include_recipe "dna::gruntjs"
+include_recipe "dna::mysql"
+include_recipe "dna::osx_open_files"
+include_recipe "dna::php"
+include_recipe "dna::phpsmtp"
+include_recipe "dna::silverstripe"
+include_recipe "dna::spidermonkey"
+
+include_recipe "dna::cleanup"

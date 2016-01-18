@@ -34,6 +34,7 @@ recipes:
 - sprout-jetbrains-editors::rubymine
 
 node_attributes:
+  mysql_root_password: password
   sprout:
     git:
       domain: pivotallabs.com

@@ -1,3 +1,0 @@
-[submodule ".subl/behat-syntax"]
-  path = .subl/behat-syntax
-  url = https://github.com/omissis/sublime-behat-syntax.git

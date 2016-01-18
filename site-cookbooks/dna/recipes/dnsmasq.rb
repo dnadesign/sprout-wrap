@@ -2,7 +2,7 @@
 # Based on the following blog article
 # http://www.echoditto.com/blog/never-touch-your-local-etchosts-file-os-x-again
 #
-brew "dnsmasq"
+package "dnsmasq"
 
 execute "copy dnsmasq for launchd" do
   command "cp -fv /usr/local/opt/dnsmasq/homebrew.mxcl.dnsmasq.plist /Library/LaunchDaemons/ &&

@@ -1,1 +1,1 @@
-brew "graphviz"
+package "graphviz"

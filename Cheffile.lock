@@ -121,7 +121,13 @@ GIT
       osx (>= 0.0.0)
       sprout-base (>= 0.0.0)
 
+PATH
+  remote: site-cookbooks/dna
+  specs:
+    dna (0.1.0)
+
 DEPENDENCIES
+  dna (>= 0)
   osx (>= 0)
   sprout-base (>= 0)
   sprout-git (>= 0)

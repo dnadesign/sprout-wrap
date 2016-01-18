@@ -1,18 +1,18 @@
-execute "tap PHP homebrew versions" do
-	command "brew tap homebrew/versions"
-end
+#execute "tap PHP homebrew versions" do
+#	command "brew tap homebrew/versions"
+#end
 
-execute "tap PHP" do
-	command "brew tap homebrew/homebrew-php"
-end
+#execute "tap PHP" do
+#	command "brew tap homebrew/homebrew-php"
+#end
 
-brew "php56", {:brew_args => "--with-mysql --with-pgsql"}
+package "php56", {:brew_args => "--with-mysql --with-pgsql"}
 
-brew "php56-xdebug"
-brew "php56-yaml"
-brew "php56-imagick"
-brew "php56-solr"
-brew "php56-twig"
+package "php56-xdebug"
+package "php56-yaml"
+package "php56-imagick"
+package "php56-solr"
+package "php56-twig"
 
 
 template "/usr/local/etc/php/5.6/php.ini" do
@@ -32,12 +32,12 @@ execute "Start PHP" do
 	command "ln -sfv /usr/local/opt/php56/*.plist ~/Library/LaunchAgents/"
 end
 
-brew "php56-mongo"
-brew "php56-mcrypt"
-brew "php56-tidy"
-brew "php56-xhprof"
-brew "php56-ssh2"
-brew "composer"
+package "php56-mongo"
+package "php56-mcrypt"
+package "php56-tidy"
+package "php56-xhprof"
+package "php56-ssh2"
+package "composer"
 
 execute "Create symlink to xhprof" do
 	command "ln -s /usr/local/opt/php56-xhprof/xhprof_html/ #{node['sprout']['home']}/Sites/xhprof"

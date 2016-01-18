@@ -1,1 +1,1 @@
-brew "spidermonkey"
+package "spidermonkey"
