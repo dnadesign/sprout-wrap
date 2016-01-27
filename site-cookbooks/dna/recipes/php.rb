@@ -1,10 +1,10 @@
-#execute "tap PHP homebrew versions" do
-#	command "brew tap homebrew/versions"
-#end
+execute "tap PHP homebrew versions" do
+	command "brew tap homebrew/versions"
+end
 
-#execute "tap PHP" do
-#	command "brew tap homebrew/homebrew-php"
-#end
+execute "tap PHP" do
+	command "brew tap homebrew/homebrew-php"
+end
 
 package "php56", {:brew_args => "--with-mysql --with-pgsql"}
 
@@ -18,14 +18,6 @@ package "php56-twig"
 template "/usr/local/etc/php/5.6/php.ini" do
 	source "php.ini.erb"
 	owner node['current_user']
-end
-
-execute "setup pear" do
-	command "chmod -R ug+w `brew --prefix php56`/lib/php \
-		&& pear config-set php_ini /usr/local/etc/php/5.6/php.ini \
-		&& pear config-set auto_discover 1 \
-		&& pear update-channels \
-		&& pear upgrade"
 end
 
 execute "Start PHP" do
