@@ -31,8 +31,11 @@ recipes:
 - sprout-postgresql
 
 # apps (editors)
-- sprout-osx-apps::textmate_preferences
-- sprout-jetbrains-editors::rubymine
+#- sprout-osx-apps::textmate_preferences
+#- sprout-jetbrains-editors::rubymine
+
+# dna
+- dna::default
 
 node_attributes:
   mysql_root_password: password

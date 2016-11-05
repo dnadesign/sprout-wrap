@@ -58,9 +58,9 @@ ruby_block "Checking that mysql is running" do
   end
 end
 
-execute "set the root password to the default" do
-  command "mysqladmin -uroot password #{PASSWORD}"
-end
+#execute "set the root password to the default" do
+#  command "mysqladmin -uroot password #{PASSWORD}"
+#end
 
 execute "insert time zone info" do
   command "mysql_tzinfo_to_sql /usr/share/zoneinfo | sed 's/Local time zone must be set--see zic manual page/XXT/' | mysql -uroot -p#{PASSWORD} mysql"

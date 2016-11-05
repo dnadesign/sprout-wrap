@@ -1,10 +1,5 @@
-execute "tap PHP homebrew versions" do
-	command "brew tap homebrew/versions"
-end
-
-execute "tap PHP" do
-	command "brew tap homebrew/homebrew-php"
-end
+homebrew_tap 'homebrew/versions'
+homebrew_tap 'homebrew/homebrew-php'
 
 package "php56", {:brew_args => "--with-mysql --with-pgsql"}
 
