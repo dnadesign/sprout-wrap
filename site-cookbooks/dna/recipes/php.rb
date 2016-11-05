@@ -1,7 +1,7 @@
 homebrew_tap 'homebrew/versions'
 homebrew_tap 'homebrew/homebrew-php'
 
-package "php56", {:brew_args => "--with-mysql --with-pgsql"}
+package "php56", {:brew_args => "--without-ldap --with-apache --with-mysql --with-postgresql"}
 
 package "php56-xdebug"
 package "php56-yaml"
